@@ -28,4 +28,4 @@ services:
 databases:
   - name: school-web-db
     databaseName: school_web
-    user: school_web_user 
+    user: school_web_user
