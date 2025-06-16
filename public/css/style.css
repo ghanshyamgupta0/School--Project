@@ -1,0 +1,502 @@
+/* Global Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    font-size: 0.9rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-bar .navbar-brand {
+    padding: 0;
+    background: transparent;
+    text-decoration: none;
+}
+
+.top-bar .navbar-brand img {
+    transition: transform 0.3s ease;
+    height: 45px;
+    width: auto;
+}
+
+.top-bar .navbar-brand img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.school-name {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover .school-name {
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.top-bar .contact-info span {
+    display: inline-block;
+}
+
+.language-switch {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-right: 1rem;
+    font-size: 0.85rem;
+}
+
+.language-switch a {
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.language-switch a:hover,
+.language-switch a.active {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.auth-buttons .btn-outline-light {
+    border-width: 2px;
+    font-weight: 500;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.auth-buttons .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.auth-buttons .btn-light {
+    font-weight: 500;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+    background: #fff;
+    color: #1a237e;
+}
+
+.auth-buttons .btn-light:hover {
+    background: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    z-index: 1020;
+    background-color: white !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-nav {
+    margin-left: auto !important;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 500;
+    padding: 1rem 1.2rem;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #0d6efd;
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 0.5rem;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('{{ asset(upload/scl-bg) }}') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    padding-top: 120px; /* Adjusted for combined header height */
+    margin-top: 0;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../upload/scl-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: -2;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7));
+    z-index: -1;
+}
+
+.hero-section h1 {
+    margin-bottom: 1.5rem;
+    animation: fadeInLeft 1s ease-out 0.3s both;
+    color: greenyellow;
+}
+
+.hero-section p {
+    animation: fadeInLeft 1s ease-out 0.5s both;
+    color: #ddd;
+}
+
+.hero-section .btn-primary {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    transition: transform 0.3s ease;
+    animation: fadeInLeft 1s ease-out 0.7s both;
+}
+
+.hero-section .btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #2980b9;
+}
+.hero-content {
+    animation: slideUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+
+/* Sections */
+section {
+    padding: 5rem 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    position: relative;
+    animation: fadeInLeft 1s ease-out 0.3s both;
+}
+
+section h2:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--secondary-color);
+    margin: 1rem auto;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    animation: scaleIn 0.8s ease-out forwards;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Forms */
+.form-control {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    animation: fadeInUp 1s ease-out;
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary-color) !important;
+}
+
+.social-links a {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+.social-links a:nth-child(1) { animation-delay: 0.1s; }
+.social-links a:nth-child(2) { animation-delay: 0.2s; }
+.social-links a:nth-child(3) { animation-delay: 0.3s; }
+.social-links a:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .top-bar .navbar-brand {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .school-name {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .language-switch {
+        margin-top: 0.5rem;
+        margin-right: 0;
+    }
+
+    .auth-buttons {
+        margin-left: auto;
+    }
+
+    .navbar-toggler {
+        margin-left: 0 !important;
+        margin-right: 1rem;
+    }
+
+    .navbar-collapse {
+        background: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 0.5rem;
+    }
+
+    .navbar-nav {
+        margin-top: 0.5rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add animation to form elements */
+.form-control {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.btn-primary {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Add animation to footer elements */
+footer {
+    animation: fadeInUp 1s ease-out;
+}
+
+.social-links a {
+    opacity: 0;
+    animation: scaleIn 0.5s ease-out forwards;
+}
+
+.social-links a:nth-child(1) { animation-delay: 0.1s; }
+.social-links a:nth-child(2) { animation-delay: 0.2s; }
+.social-links a:nth-child(3) { animation-delay: 0.3s; }
+.social-links a:nth-child(4) { animation-delay: 0.4s; }
+
+/* Add animation to navbar elements */
+.navbar {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.navbar-brand img {
+    animation: fadeInUp 1s ease-out;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+} 
